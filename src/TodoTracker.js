@@ -4,8 +4,7 @@ import FormTasks from "./components/FormTasks";
 import Header from "./components/Header";
 import TaskGroup from "./components/TaskGroup";
 import todoReducer from "./reducer/todoReducer";
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import About from "./components/About";
+
 
 const init = () =>{
 
@@ -44,7 +43,7 @@ const TodoTracker = () => {
     }
 
     return (
-        <Router>
+        
             <div className='container'>
 
                 <Header 
@@ -52,22 +51,18 @@ const TodoTracker = () => {
                     btnState={ btnHeader }
                 />
                 
-                <Route path="./Todo-tracking-react/" exact render={( props ) => (
-                    <>
-                        {btnHeader && <FormTasks addTodo={ addTodo } />}
-                        { todos.length > 0 ?  <TaskGroup 
-                                            todos={ todos } 
-                                            deleteTodo={ deleteTodo }
-                                            toggle={ toggleReminder }
-                                        />
-                                        : 'No tasks to show'
-                        }
-                    </>
-                )} />
-                <Route path="./Todo-tracking-react/About" component={ About } />
+                {btnHeader && <FormTasks addTodo={ addTodo } />}
+                { todos.length > 0 ?  <TaskGroup 
+                                    todos={ todos } 
+                                    deleteTodo={ deleteTodo }
+                                    toggle={ toggleReminder }
+                                />
+                                : 'No tasks to show'
+                }                
+                
                 <Footer />                
             </div>
-        </Router>
+       
     )
 }
 
