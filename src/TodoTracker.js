@@ -52,7 +52,7 @@ const TodoTracker = () => {
                     btnState={ btnHeader }
                 />
                 
-                <Route path="/" exact render={( props ) => (
+                <Route path="./" exact render={( props ) => (
                     <>
                         {btnHeader && <FormTasks addTodo={ addTodo } />}
                         { todos.length > 0 ?  <TaskGroup 
@@ -64,7 +64,7 @@ const TodoTracker = () => {
                         }
                     </>
                 )} />
-                <Route path="/About" component={ About } />
+                <Route path="./About" component={ About } />
                 <Footer />                
             </div>
         </Router>
