@@ -5,7 +5,7 @@ const About = () => {
         <div>
             <h4>All rights reserved @ 2021 </h4>
             <p>Luis Arévalo</p>
-            <Link to="./">Go Back</Link>
+            <Link to="./Todo-tracking-react/">Go Back</Link>
         </div>
     )
 }
